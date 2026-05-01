@@ -1,0 +1,26 @@
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | =================================================================
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline |   OHLCV Rolling-Mean Signal Pipeline
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | =================================================================
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Job started
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Config loaded from : config.yaml
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Pipeline version   : v1
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Random seed        : 42
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Input data file    : data.csv
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Signal column      : close
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Rolling window     : 5 periods
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Metrics output     : metrics.json
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Log output         : run.log
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | =================================================================
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Loading OHLCV data from: 'data.csv'
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Loaded 10,000 rows | retained columns: ['close']
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Date range: 2024-01-01 00:00:00 -> 2024-01-07 22:39:00
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | No NaN values in raw data
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Computing 5-period rolling mean on 'close' -> 'rolling_mean_5'
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Rolling mean computed | warm-up NaNs: 4 | valid: 9,996
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Generating binary signal 'signal_5' (1 = close > rolling_mean_5, 0 = close <= rolling_mean_5)
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Signal distribution | BUY(1): 4,989 (49.91%) | SELL(0): 5,007 (50.09%) | total: 9,996
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Signal transitions (direction changes): 2,778
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | Metrics summary: {"version": "v1", "rows_processed": 10000, "metric": "signal_rate", "value": 0.4991, "latency_ms": 33, "seed": 42, "status": "success"}
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | =================================================================
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline |   Job end | Status: Pipeline completed successfully [OK]
+2026-05-01T16:27:38 | INFO     | ohlcv_pipeline | =================================================================
