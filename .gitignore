@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# Editor
+.vscode/
+.idea/
+
+# Data and logs
+*.log
+*.csv
+metrics.json
+
+# Byte-compiled / C extensions
+*.so
+
+# Docker
+.env
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db

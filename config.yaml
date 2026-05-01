@@ -1,0 +1,22 @@
+# ─────────────────────────────────────────────────────────────
+# OHLCV Rolling-Mean Signal Pipeline — Configuration
+# ─────────────────────────────────────────────────────────────
+
+seed: 42
+window: 5
+version: "v1"
+
+data:
+  filepath: data.csv          # path to the OHLCV CSV (relative to working dir)
+  date_column: timestamp      # column to parse as datetime index
+
+signal:
+  column: close               # price column used for the rolling mean & signal
+  # Signal rule:
+  #   1 (BUY)  → close >  rolling_mean
+  #   0 (SELL) → close <= rolling_mean
+
+output:
+  metrics_path: output/metrics.json   # structured JSON metrics
+  log_path: output/run.log            # detailed log file
+  log_level: INFO                      # DEBUG | INFO | WARNING | ERROR
